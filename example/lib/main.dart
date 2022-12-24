@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               startYear: 1900, // optional
               endYear: 2020, // optional
               width: 10, // optional
-              // selectedDay: 14, // optional
+              selectedDay: 14, // optional
               selectedMonth: 10, // optional
               selectedYear: 1993, // optional
               onChangedDay: (value) => print('onChangedDay: $value'),
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // border: Border.all(color: Colors.grey, width: 1.0)), // optional
               // showDay: false,// optional
               // dayFlex: 2,// optional
-              // locale: "zh_CN",// optional
+              locale: "ar", // optional
               // hintDay: 'Day', // optional
               // hintMonth: 'Month', // optional
               // hintYear: 'Year', // optional
