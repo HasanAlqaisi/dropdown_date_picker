@@ -284,18 +284,18 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
 
   ///list of months , ar
   List<dynamic> listMonths_ar = [
-    {"id": 1, "value": "(1) يناير"},
-    {"id": 2, "value": "(2) فبراير"},
-    {"id": 3, "value": "(3) مارس"},
-    {"id": 4, "value": "(4) ابريل"},
-    {"id": 5, "value": "(5) مايو"},
-    {"id": 6, "value": "(6) يونيو"},
-    {"id": 7, "value": "(7) يوليو"},
-    {"id": 8, "value": "(8) اغسطس"},
-    {"id": 9, "value": "(9) سبتمبر"},
-    {"id": 10, "value": "(10) اكتوبر"},
-    {"id": 11, "value": "(11) نوفمبر"},
-    {"id": 12, "value": "(12) ديسمبر"}
+    {"id": 1, "value": "1 يناير"},
+    {"id": 2, "value": "2 فبراير"},
+    {"id": 3, "value": "3 مارس"},
+    {"id": 4, "value": "4 ابريل"},
+    {"id": 5, "value": "5 مايو"},
+    {"id": 6, "value": "6 يونيو"},
+    {"id": 7, "value": "7 يوليو"},
+    {"id": 8, "value": "8 اغسطس"},
+    {"id": 9, "value": "9 سبتمبر"},
+    {"id": 10, "value": "10 اكتوبر"},
+    {"id": 11, "value": "11 نوفمبر"},
+    {"id": 12, "value": "12 ديسمبر"}
   ];
 
   ///update function
@@ -307,6 +307,24 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        if (widget.showDay)
+          Expanded(
+            flex: widget.dayFlex,
+            child: Container(
+              decoration: widget.boxDecoration ?? const BoxDecoration(),
+              child: SizedBox(
+                  // height: 49,
+                  child: ButtonTheme(
+                alignedDropdown: true,
+                child: widget.isDropdownHideUnderline
+                    ? DropdownButtonHideUnderline(
+                        child: dayDropdown(),
+                      )
+                    : dayDropdown(),
+              )),
+            ),
+          ),
+        if (widget.showDay) w(widget.width),
         if (widget.showMonth)
           Expanded(
             flex: widget.monthFlex,
@@ -326,24 +344,6 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
             ),
           ),
         if (widget.showMonth) w(widget.width),
-        if (widget.showDay)
-          Expanded(
-            flex: widget.dayFlex,
-            child: Container(
-              decoration: widget.boxDecoration ?? const BoxDecoration(),
-              child: SizedBox(
-                  // height: 49,
-                  child: ButtonTheme(
-                alignedDropdown: true,
-                child: widget.isDropdownHideUnderline
-                    ? DropdownButtonHideUnderline(
-                        child: dayDropdown(),
-                      )
-                    : dayDropdown(),
-              )),
-            ),
-          ),
-        if (widget.showDay) w(widget.width),
         if (widget.showYear)
           Expanded(
             flex: widget.yearFlex,
